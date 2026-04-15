@@ -1,68 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&display=swap');
+
 :root {
-    --primary: #2d3436;
-    --accent: #00b894;
-    --bg: #f9f9f9;
-    --white: #ffffff;
+    
+    --color-1: #02040f; 
+    --color-2: #e67e22;
+    --color-3: #4ca1af;
+    --color-4: #8e44ad;
+    
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --text-white: #ffffff;
+    --text-dark: #2d3436;
+    --accent: #00d2ff;
+    --animation-speed: 20s;
+}
+
+
+* {
+    box-sizing: border-box;
 }
 
 body {
-    background-color: var(--bg);
-    color: var(--primary);
-    font-family: 'Inter', -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Corben', serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin: 0;
+    overflow-x: hidden;
+    color: var(--text-white);
+    
+    /* gradient shift*/
+    animation: skyGradient var(--animation-speed) linear infinite;
+    background-size: 100% 400%;
+    transition: background 2s ease; 
 }
 
+@keyframes skyGradient {
+    0%, 100% { background: var(--color-1); }
+    25% { background: var(--color-2); }
+    50% { background: var(--color-3); }
+    75% { background: var(--color-4); }
+}
+
+/* --- WRAPPERS and CONTAINERS --- */
 .wrapper {
+    position: relative;
+    z-index: 10;
     text-align: center;
-    width: 100%;
-    max-width: 350px;
-    padding: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    width: 340px;
+    margin: 20px;
 }
 
-.avatar {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border: 3px solid var(--white);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.wrapper.wide {
+    width: 90%;
+    max-width: 750px;
 }
 
+/* --- FONTS --- */
+h1 { 
+    font-size: 2.2rem; 
+    margin: 0; 
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.85;
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+/* --- NAV LINKS --- */
 .links {
     margin-top: 30px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
 }
 
 .link-item {
-    background: var(--white);
-    padding: 16px;
-    border-radius: 10px;
-    text-decoration: none;
-    color: var(--primary);
-    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    transition: all 0.2s ease;
-    border: 1px solid #eee;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text-dark);
+    padding: 16px;
+    border-radius: 18px;
+    text-decoration: none;
+    font-weight: 400;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.link-item i {
+    font-size: 1.2rem;
+    width: 20px;
 }
 
 .link-item:hover {
-    transform: scale(1.02);
-    border-color: var(--accent);
+    transform: translateY(-5px);
+    background: #ffffff;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     color: var(--accent);
 }
 
-footer {
-    margin-top: 40px;
+/* --- DAILY & CITIES GRID --- */
+.daily-content, .carousel-container {
+    margin: 30px 0;
+}
+
+.item {
+    background: rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.item h3 {
     font-size: 0.8rem;
-    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: var(--accent);
+}
+
+/* --- CITIES PAGE ALIGNMENT --- */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers the whole group */
+    gap: 10px;
+    margin: 40px 0;
+    width: 100%;
+}
+
+.city-card {
+    flex-grow: 1; /* Takes up all available space between buttons */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers H2 and Grid vertically */
+    text-align: center;
+}
+
+.palette-grid {
+    display: flex;
+    justify-content: center; /* Centers swatches horizontally */
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto; /* Ensures no left-side bias */
+    padding: 0;
+}
+
+.swatch-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0; /* Clear any browser defaults */
+}
+.swatch {
+    width: 70px;
+    height: 100px;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Helps see the box if color fails */
+    display: block; /* Ensures it isn't collapsed */
+}
+
+.hex-code {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.75rem;
+    color: #ffffff; 
+    font-family: 'Corben', serif;
+}
+
+.nav-btn {
+    flex-shrink: 0; 
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- IMAGES & EMBEDS --- */
+#daily-painting {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 650px) {
+    .daily-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .wrapper.wide { padding: 1.5rem; }
+    .swatch { width: 55px; height: 80px; }
+    h1 { font-size: 1.8rem; }
 }

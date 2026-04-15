@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cities as Colors | Your Name</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="wrapper wide">
+        <header>
+            <h1>Cities as Colors</h1>
+            <p>Palettes for places seen in person or from afar.</p>
+        </header>
+
+        <div class="carousel-container">
+            <button class="nav-btn" onclick="moveSlide(-1)">❮</button>
+            
+            <div class="city-card">
+                <h2 id="city-name">Loading...</h2>
+                <div id="palette-grid" class="palette-grid"></div>
+            </div>
+
+            <button class="nav-btn" onclick="moveSlide(1)">❯</button>
+        </div>
+
+        <a href="index.html" class="link-item">
+            <span>Home</span>
+        </a>
+    </div>
+
+    <script src="js/cities.js"></script>
+</body>
+</html>

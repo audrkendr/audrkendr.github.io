@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Inconsolata:wght@400;600;700&display=swap');
 
 :root {
-    
     --color-1: #02040f; 
     --color-2: #e67e22;
     --color-3: #4ca1af;
@@ -14,7 +13,6 @@
     --animation-speed: 20s;
 }
 
-
 * {
     box-sizing: border-box;
 }
@@ -22,7 +20,9 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Corben', serif;
+    /* Inconsolata as the clean, curated base font */
+    font-family: 'Inconsolata', monospace;
+    font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,7 +30,7 @@ body {
     overflow-x: hidden;
     color: var(--text-white);
     
-    /* gradient shift*/
+    /* Gradient Shift Animation */
     animation: skyGradient var(--animation-speed) linear infinite;
     background-size: 100% 400%;
     transition: background 2s ease; 
@@ -64,18 +64,19 @@ body {
     max-width: 750px;
 }
 
-/* --- FONTS --- */
-h1 { 
-    font-size: 2.2rem; 
+/* --- FONTS & HEADINGS --- */
+h1, h2, .city-card h2 { 
+    font-family: 'Corben', serif;
+    font-size: 2.5rem; 
     margin: 0; 
     font-weight: 700;
     letter-spacing: -0.03em;
 }
 
 header p {
-    font-size: 1rem;
+    font-size: 1.15rem; 
     opacity: 0.85;
-    margin-top: 10px;
+    margin-top: 12px;
     font-weight: 400;
 }
 
@@ -90,27 +91,49 @@ header p {
 .link-item {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; 
     gap: 15px;
-    background: rgba(255, 255, 255, 0.9);
-    color: var(--text-dark);
-    padding: 16px;
+    
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-white);
+    
+    padding: 14px 22px;
     border-radius: 18px;
-    text-decoration: none;
-    font-weight: 400;
+    text-decoration: none; 
+    
+    /* Switched links to Corben font */
+    font-family: 'Corben', serif;
+    font-size: 1.05rem;
+    font-weight: 400; 
+    letter-spacing: -0.01em;
+    
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .link-item i {
-    font-size: 1.2rem;
-    width: 20px;
+    font-size: 1.25rem;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Creates a clean custom underline on hover that skips icons */
+.link-item span {
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
 }
 
 .link-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     background: #ffffff;
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     color: var(--accent);
+}
+
+.link-item:hover span {
+    border-bottom: 2px solid var(--accent);
 }
 
 /* --- DAILY & CITIES GRID --- */
@@ -126,39 +149,40 @@ header p {
 }
 
 .item h3 {
-    font-size: 0.8rem;
+    font-size: 0.9rem; /* Scaled up for monospace clarity */
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 15px;
     color: var(--accent);
+    font-weight: 700; 
 }
 
 /* --- CITIES PAGE ALIGNMENT --- */
 .carousel-container {
     display: flex;
     align-items: center;
-    justify-content: center; /* Centers the whole group */
+    justify-content: center; 
     gap: 10px;
     margin: 40px 0;
     width: 100%;
 }
 
 .city-card {
-    flex-grow: 1; /* Takes up all available space between buttons */
+    flex-grow: 1; 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers H2 and Grid vertically */
+    align-items: center; 
     text-align: center;
 }
 
 .palette-grid {
     display: flex;
-    justify-content: center; /* Centers swatches horizontally */
+    justify-content: center; 
     align-items: center;
     gap: 15px;
     flex-wrap: wrap;
     width: 100%;
-    margin: 0 auto; /* Ensures no left-side bias */
+    margin: 0 auto; 
     padding: 0;
 }
 
@@ -166,22 +190,24 @@ header p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0; /* Clear any browser defaults */
+    margin: 0; 
 }
+
 .swatch {
     width: 70px;
     height: 100px;
     border-radius: 12px;
-    border: 2px solid rgba(255, 255, 255, 0.5); /* Helps see the box if color fails */
-    display: block; /* Ensures it isn't collapsed */
+    border: 2px solid rgba(255, 255, 255, 0.5); 
+    display: block; 
 }
 
 .hex-code {
     display: block;
     margin-top: 8px;
-    font-size: 0.75rem;
+    font-size: 0.85rem; /* Scaled up to keep hex numbers readable */
     color: #ffffff; 
-    font-family: 'Corben', serif;
+    font-weight: 400;
+    letter-spacing: 0.5px; 
 }
 
 .nav-btn {
@@ -196,6 +222,19 @@ header p {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+/* --- FOOTER / COPYRIGHT --- */
+footer, .copyright {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-top: 25px;
+    letter-spacing: 0.5px;
 }
 
 /* --- IMAGES & EMBEDS --- */
@@ -205,13 +244,15 @@ header p {
     margin-bottom: 10px;
 }
 
+/* --- RESPONSIVE MEDIA QUERIES --- */
 @media (max-width: 650px) {
     .daily-content {
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
+    .wrapper { padding: 2rem 1.5rem; width: 310px; }
     .wrapper.wide { padding: 1.5rem; }
     .swatch { width: 55px; height: 80px; }
-    h1 { font-size: 1.8rem; }
+    h1 { font-size: 2rem; }
 }

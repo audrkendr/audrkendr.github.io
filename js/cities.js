@@ -10,7 +10,7 @@ const cityData = [
         sky: ["#1A2536", "#3B4E68", "#64829E", "#A3BDCC"]
     },
     {
-        name: "New York City",
+        name: "NYC",
         colors: ["#272757", "#C5954A", "#593C39", "#8A9EA7"], // NYC
         sky:["#0F172A", "#334155", "#64748B", "#D9A05B"]
     },
@@ -20,7 +20,7 @@ const cityData = [
         sky: ["#242D34", "#3F4E5A", "#617585", "#91A4B3"]
     },    
     {
-        name: "Los Angeles",
+        name: "LA",
         colors: ["#CA1F48", "#5948df", "#feca57", "#c51f96"], // LA
         sky: ["#120c1f", "#1a1c4b", "#ff5e62", "#ff9966"]
     },

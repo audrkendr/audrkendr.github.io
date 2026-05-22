@@ -36,6 +36,12 @@ body {
     transition: background 2s ease; 
 }
 
+.bio-text {
+     text-align: left;
+     justify-content: center;
+     font-family: 'Inconsolata', monospace;
+}
+
 @keyframes skyGradient {
     0%, 100% { background: var(--color-1); }
     25% { background: var(--color-2); }

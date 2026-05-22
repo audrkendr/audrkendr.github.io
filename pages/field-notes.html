@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Notes | Audrey</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .notebook-page {
+            position: relative;
+            padding-left: 55px;
+        }
+
+        .notebook-page::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 44px;
+            border-right: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* ascii hole column */
+        .hole-col {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 44px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 0;
+            pointer-events: none;
+        }
+
+        .hole {
+            font-family: 'Inconsolata', monospace;
+            font-size: 1.4em;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1;
+            user-select: none;
+        }
+
+        /* margin tags */
+        .margin-note {
+            font-family: 'corben', monospace;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            color: #ffffff
+            border-left: 1.5px solid rgba(255, 255, 255, 0.15);
+            padding-left: {8px};
+            margin-bottom: 5px;  
+        }
+
+        .ascii-rule {
+            font-family: 'Inconsolata', monospace;
+            font-size: 0.85em;
+            color: #ffffff;
+            letter-spacing: 1px;
+            margin: 10px 0 20px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body class="writing-bg">
+
+    <div class="wrapper wide">
+        <header>
+            <h1>Field Notes</h1>
+        </header>
+
+        <section class="container">
+            <div class="bio-text notebook-page" style="text-align: left;">
+
+                <!-- ascii hole punches in the margin -->
+                <div class="hole-col">
+                    <span class="hole">◯</span>
+                    <span class="hole">◯</span>
+                    <span class="hole">◯</span>
+                </div>
+
+                <p style="font-size: 1.1em; margin-bottom: 5px; color: #ffffff; font-style: italic;">
+                    Words for people who think in functions and those who want to learn what a function is.
+                </p>
+                <hr></hr>
+            
+
+                <h3>Selected Works</h3>
+                <p class="ascii-rule">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
+
+                <!-- LLM Proto -->
+                <div style="margin-bottom: 25px;">
+                    <p class="margin-note">build log &middot; llms &middot; python</p>
+                    <p style="margin: 0 0 5px 0;">
+                        <a href="https://medium.com/@audrkendr/bridging-the-gap-using-llms-to-automate-solution-discovery-9a122d37d2a5" target="_blank" rel="noopener noreferrer" style="font-size: 1.1em;"><strong>The Future of Solution Discovery: Driven by LLMs</strong></a>
+                    </p>
+                    <p style="margin: 0; color: #ffffff;">A hands-on build log exploring how to automate the "translation tax" between unclear client requests and structured engineering tickets, using Pydantic schema enforcement and the Gemini 2.5 Flash SDK.</p>
+                </div>
+
+                <p class="ascii-rule">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
+
+                <!-- SlackBot -->
+                <div style="margin-bottom: 25px;">
+                    <p class="margin-note">dx audit &middot; api &middot; slack</p>
+                    <p style="margin: 0 0 5px 0;">
+                        <a href="https://medium.com/@audrkendr/case-study-the-15-minute-slack-bot-challenge-c7cdfd2afe19" target="_blank" rel="noopener noreferrer" style="font-size: 1.1em;"><strong>Case Study: The 15-Minute Slack Bot Challenge</strong></a>
+                    </p>
+                    <p style="margin: 0; color: #ffffff;">A friction audit of the Slack Bolt API that examines developer documentation clarity, event-driven architecture, and what rapid prototyping reveals about where API ecosystems succeed or fail.</p>
+                </div>
+
+                <p class="ascii-rule">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
+
+                <!-- Documentation -->
+                <div style="margin-bottom: 25px;">
+                    <p class="margin-note">technical writing &middot; docs</p>
+                    <p style="margin: 0 0 5px 0;">
+                        <a href="https://medium.com/@audrkendr/the-anatomy-of-good-documentation-a260cd0d53d3" target="_blank" rel="noopener noreferrer" style="font-size: 1.1em;"><strong>The Anatomy of Good Documentation</strong></a>
+                    </p>
+                    <p style="margin: 0; color: #ffffff;">A medical-themed look at why information architecture, contextual code commenting, and clear runbooks aren't just nice-to-haves, but life or death for codebases.</p>
+                </div>
+
+                <p class="ascii-rule">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
+
+                <p style="margin-top: 10px; font-size: 1.05em;">
+                    <a href="https://medium.com/@audrkendr" target="_blank" rel="noopener noreferrer" style="color: #d7f8c9; text-decoration: underline; font-weight: 600;">Explore more technical deep-dives on Medium &rarr;</a>
+                </p>
+
+            </div>
+        </section>
+
+        <a href="../index.html" class="link-item">
+            <span>Home</span>
+        </a>
+    </div>
+
+</body>
+</html>

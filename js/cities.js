@@ -18,10 +18,15 @@ const cityData = [
         name: "Seattle",
         colors: ["#516052", "#0A5F38", "#718093", "#84cd75"], // Seattle
         sky: ["#242D34", "#3F4E5A", "#617585", "#91A4B3"]
-    },    
+    }, 
+   {
+    name: "SF",
+    colors: ["#c0392b", "#f39c12", "#1abc9c", "#8e44ad"],
+    sky: ["#0f2027", "#2c5364", "#4a90d9", "#b8d4ea"]
+    },
     {
         name: "LA",
-        colors: ["#CA1F48", "#5948df", "#feca57", "#c51f96"], // LA
+        colors: ["#5948df", "#feca57", "#c51f96","#e02A27"], // LA
         sky: ["#120c1f", "#1a1c4b", "#ff5e62", "#ff9966"]
     },
     {

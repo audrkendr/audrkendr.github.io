@@ -21,7 +21,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Inconsolata', monospace;
-
     font-size: 16px;
     display: flex;
     justify-content: center;
@@ -34,12 +33,6 @@ body {
     animation: skyGradient var(--animation-speed) linear infinite;
     background-size: 100% 400%;
     transition: background 2s ease; 
-}
-
-.bio-text {
-     text-align: left;
-     justify-content: center;
-     font-family: 'Inconsolata', monospace;
 }
 
 @keyframes skyGradient {
@@ -134,7 +127,6 @@ header p {
     align-items: center;
 }
 
-/* Creates a clean custom underline on hover that skips icons */
 .link-item span {
     border-bottom: 2px solid transparent;
     transition: border-color 0.3s ease;
@@ -164,7 +156,7 @@ header p {
 }
 
 .item h3 {
-    font-size: 0.9rem; /* Scaled up for monospace clarity */
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 15px;
@@ -219,7 +211,7 @@ header p {
 .hex-code {
     display: block;
     margin-top: 8px;
-    font-size: 0.85rem; /* Scaled up to keep hex numbers readable */
+    font-size: 0.85rem;
     color: #ffffff; 
     font-weight: 400;
     letter-spacing: 0.5px; 
@@ -259,17 +251,9 @@ footer, .copyright {
     margin-bottom: 10px;
 }
 
-@media (max-width: 650px) {
-    .daily-content {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    .wrapper { padding: 2rem 1.5rem; width: 310px; }
-    .wrapper.wide { padding: 1.5rem; }
-    .swatch { width: 55px; height: 80px; }
-    h1 { font-size: 2rem; }
-}
+/* ============================================
+   ABOUT PAGE — all styles scoped to about-bg
+   ============================================ */
 
 body.about-bg { 
     display: grid !important; 
@@ -360,18 +344,83 @@ body.about-bg a {
     color: #c5cefa;
 }
 
-@media (max-width: 900px) {
-    body.about-bg {
-        grid-template-columns: 1fr !important;
-        background-image: none !important;
-    }
- 
-    body.about-bg .wrapper.wide {
-        grid-column: 1 !important;
-        width: 90% !important;
-        margin: 20px auto !important;
-    }
+body.about-bg header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-top: 0.5rem;
 }
+
+body.about-bg h1 {
+    font-size: 2.25rem;  
+    text-align: center;
+    display: inline-block;
+    margin-bottom: -1rem;
+}
+
+
+body.about-bg .container {
+    max-width: 620px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+body.about-bg .bio-text {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 2rem;
+    width: fit-content;      
+    margin-left: auto;      
+    margin-right: auto;
+}
+
+body.about-bg .bio-pfp {
+    margin-top: 0;
+    max-width: 23%;
+    flex-shrink: 0;
+    align-self: flex-start;
+    border-radius: 50%;
+}
+
+body.about-bg .bio-paragraphs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+body.about-bg .bio-paragraphs p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* --- Body paragraphs below the intro --- */
+body.about-bg .bio-body {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+body.about-bg .bio-body p {
+    margin: 0 0 0.75rem 0;
+    line-height: 1.7;
+}
+
+/* --- Dividers --- */
+body.about-bg .bio-divider {
+    text-align: center;
+    letter-spacing: 12px;
+    margin: 1.25rem 0 !important;
+}
+
+/* --- Closing line --- */
+body.about-bg .bio-closing {
+    margin-top: 0.5rem;
+}
+
+/* ============================================
+   PROJECTS PAGE
+   ============================================ */
 
 body.projects-bg {
     background: #3589a5 !important; 
@@ -387,6 +436,10 @@ body.projects-bg a {
     color: #53d4ff; 
 }
 
+/* ============================================
+   WRITING PAGE
+   ============================================ */
+
 body.writing-bg {
     background: #96AE8D !important; 
     animation: none !important; 
@@ -399,4 +452,33 @@ body.writing-bg .wrapper {
 
 body.writing-bg a {
     color: #d7f8c9; 
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 650px) {
+    .daily-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .wrapper { padding: 2rem 1.5rem; width: 310px; }
+    .wrapper.wide { padding: 1.5rem; }
+    .swatch { width: 55px; height: 80px; }
+    h1 { font-size: 2rem; }
+}
+
+@media (max-width: 900px) {
+    body.about-bg {
+        grid-template-columns: 1fr !important;
+        background-image: none !important;
+    }
+ 
+    body.about-bg .wrapper.wide {
+        grid-column: 1 !important;
+        width: 90% !important;
+        margin: 20px auto !important;
+    }
 }
